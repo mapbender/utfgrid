@@ -21,8 +21,8 @@
     "bin-dir": "bin"
   },
   "autoload": {
-    "psr-4": {
-      "Mapbender\\UTFGridBundle\\": "."
+    "psr-0": {
+      "Mapbender\\UTFGridBundle": "."
     }
   }, "extra": {
     "branch-alias": {
