@@ -85,6 +85,10 @@ $.widget("mapbender.mbUTFGrid", {
         this.control = utfGridControl;
         this.map.addControl(utfGridControl);
         utfGridControl.deactivate();
+
+        if (widget.options.autoActivate){ // autoOpen old configuration
+            widget.activate();
+        }
     },
 
     defaultAction: function() {

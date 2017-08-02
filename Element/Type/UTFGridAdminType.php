@@ -49,54 +49,18 @@ class UTFGridAdminType extends AbstractType implements ExtendedCollection
 
         $builder->add('target', 'target_element',
             array(
-            'element_class' => 'Mapbender\\CoreBundle\\Element\\Map',
-            'application' => $application,
-            'property_path' => '[target]',
-            'required' => false));
-        // TODO: fill choices
-        //$debugInformations = json_encode($application);
-        // $debugInformations = json_encode($element);
-
-        //$configuration = $element->getConfiguration();
-//        foreach ($application->getElements() as $mapElement) {
-//
-//            // $mapElement instanceof  Map ||  is_subclass_of($mapElement, Map::class) ||
-//            $isMapElement = $mapElement->getClass() == 'Mapbender\CoreBundle\Element\Map';
-//
-//            if (!$isMapElement) {
-//                continue;
-//            }
-//
-//            $mapConfiguration = $mapElement->getConfiguration();
-//            foreach ($application->getLayersets() as $layerset) {
-//
-//                $isLayerset = $this->checkIfLayerset($mapConfiguration, $layerset);
-//                $isInLayersets = $this->checkIfInLayerset($mapConfiguration, $layerset);
-//
-//                if ($isLayerset || $isInLayersets) {
-//                    /**@var  Layerset $layerset*/
-//
-//                    foreach ($layerset->getInstances() as $instance) {
-//
-//
-//                        $isLayerEnabled = $instance->isBasesource() && $instance->getEnabled();
-//                        //TODO: add rudimentary UTF-Grid Detection mechanism f.e. check for application/json in getMap
-//                        if ($isLayerEnabled ) {
-//                            $wmsServices[strval($instance->getId())] = $instance->getTitle();
-//                        }
-//
-//                    }
-//                }
-//            }
-//        }
-
-        $builder->add('instances', "collection", array(
-            'property_path' => '[instances]',
-            'type' => new UTFGridInstanceAdminType(),
-            'allow_add' => true,
-            'allow_delete' => true,
-            'auto_initialize' => false
-        ));
+                'element_class' => 'Mapbender\\CoreBundle\\Element\\Map',
+                'application' => $application,
+                'property_path' => '[target]',
+                'required' => false))
+            ->add('autoActivate', 'checkbox', array('required' => false))
+            ->add('instances', "collection", array(
+                'property_path' => '[instances]',
+                'type' => new UTFGridInstanceAdminType(),
+                'allow_add' => true,
+                'allow_delete' => true,
+                'auto_initialize' => false
+            ));
 
 
 
