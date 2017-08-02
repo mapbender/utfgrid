@@ -1,0 +1,32 @@
+{
+  "name": "mapbender/utfgrid",
+  "description": "Mapbender utfgrid element",
+  "keywords": [
+    "utf",
+    "grid",
+    "gis"
+  ],
+  "type": "library",
+  "license": "MIT",
+  "authors": [
+    {
+      "name": "Stefan Winkelmann",
+      "email": "stefan.winkelmann@wheregroup.com"
+    }
+  ],
+  "require": {
+    "php": ">=5.3.3"
+  },
+  "config": {
+    "bin-dir": "bin"
+  },
+  "autoload": {
+    "psr-4": {
+      "Mapbender\\UTFGridBundle\\": "."
+    }
+  }, "extra": {
+    "branch-alias": {
+
+    }
+  }
+}
